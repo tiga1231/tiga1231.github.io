@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Install Sqlite on Windows</title>
+	<style>
+	ul li {
+		margin-top:50px;
+	}
+	img {
+	max-width:600px;
+	}
+	</style>
+</head>
+
+<body>
+
+<h1>Installing Sqlite3 on Windows</h1>
+
+<ol>
+<li>Go to <a href='https://sqlite.org/download.html'>https://sqlite.org/download.html</a>
+
+<li>Download 'sqlite-tools-win32-x86-3150000.zip' under 'Precompiled Binaries for Windows' section
+
+<li>Extract sqlite3.exe from zip
+
+<li>One easiest way to test/run it is by double clicking sqlite3.exe
+<p>You would see something like this</p>
+<img src='sqlite.png' alt='screen shot of sqlite.exe' />
+
+<li>Follow instructions on <a href='https://sqlite.org/cli.html'>https://sqlite.org/cli.html</a> to play around with it.
+</ol>
+
+<h2>Running from cmd</h2>
+
+<p>If you want to run it by typing sqlite3 from <strong>cmd</strong>, you have to add the folder you extract sqlite.exe to you system PATH variable.
+On Windows 10 (similar on Windows 7/8), this can be done by </p>
+<ul>
+<li>right clicking your computer icon, select properties</li>
+
+
+<li>Abvanced system settings</li>
+<div><img src='1.png'></div>
+
+<li>Under tag 'Advanced', click Environment Variables...</li>
+<div><img src='2.png'></div>
+
+<li>select PATH variable and click Edit</li>
+<div><img src='3.png'></div>
+
+
+
+<li>New...</li>
+<li>Copy/Type the path to your folder that holds the sqlite3.exe file</li>
+<div><img src='4.png'></div>
+
+<li>Click Ok, Ok...</li>
+</ul>
+<p>Then you should be able to run it through <strong>cmd</strong>, enjoy</p>
+
+
+
+
+
+
+</body>
+</html>
