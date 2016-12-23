@@ -76,3 +76,7 @@ function hamming(v1,v2){
 		return a + Math.abs(b - v2[i]);
 	},0);
 }
+
+function len(v){
+	return Math.sqrt(dot(v,v));
+}
