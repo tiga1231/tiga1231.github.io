@@ -1,16 +1,20 @@
-2, 8:00, 9:15, csc533]]GS 701
-4, 8:00, 9:15, csc533]]GS 701
+2, 8:00, 9:15, CSC 533]]Comp Graphics]]GS 701
+4, 8:00, 9:15, CSC 533]]Comp Graphics]]GS 701
 
-2, 9:30, 10:45, csc544]]GS 701
-4, 9:30, 10:45, csc544]]GS 701
+2, 9:30, 10:45, CSC 544]]Data Viz]]GS 701
+4, 9:30, 10:45, CSC 544]]Data Viz]]GS 701
 
-2, 15:30, 16:45, csc665]]GS 737
-4, 15:30, 16:45, csc665]]GS 737
+2, 15:30, 16:45, CSC 665]]Data Science]]]]GS 737
+4, 15:30, 16:45, CSC 665]]Data Science]]]]GS 737
 
-1, 11:00, 11:50, math515B]]C E Chavez 105
-3, 11:00, 11:50, math515B]]C E Chavez 105
-5, 11:00, 11:50, math515B]]C E Chavez 105
+1, 11:00, 11:50, MATH 515B]]Abstract Algebra]]C E Chavez 105
+3, 11:00, 11:50, MATH 515B]]Abstract Algebra]]C E Chavez 105
+5, 11:00, 11:50, MATH 515B]]Abstract Algebra]]C E Chavez 105
 
-1, 9:00, 9:50, math532]]BioSci W Rm 237
-3, 9:00, 9:50, math532]]BioSci W Rm 237
-5, 9:00, 9:50, math532]]BioSci W Rm 237
+1, 9:00, 9:50, MATH 532]]Topological Spaces]]BioSci W Rm 237
+3, 9:00, 9:50, MATH 532]]Topological Spaces]]BioSci W Rm 237
+5, 9:00, 9:50, MATH 532]]Topological Spaces]]BioSci W Rm 237
+
+2, 12:30, 13:45, CSC 573]]Theory of Computation]]GS 906
+4, 12:30, 13:45, CSC 573]]Theory of Computation]]GS 906
+
