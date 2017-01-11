@@ -10,6 +10,15 @@ line {
 	stroke: #aaa;
 	stroke-dasharray:1 1;
 }
+
+.isReg {
+	stroke: #555;
+	stroke-width:3;
+}
+
+.notReg {
+	fill-opacity: 0.5;
+}
 .axis path{
 	display:none;
 }
@@ -28,7 +37,12 @@ line {
 
 <script>
 'use strict';
-
+function isReg(tag){
+	if (tag[0].includes('532') || tag[0].includes('515') || tag[0].includes('665'))
+		return true;
+	else
+		return false;
+}
 String.prototype.toSec = function () { 
 	if (!this)
 		return null; 
@@ -56,9 +70,13 @@ var t0 = d3.min(data, function(d){
 	return d.start.toSec();
 })
 
+t0 = Math.min(t0, "8:00".toSec());
+
 var t1 = d3.max(data, function(d){
 	return d.end.toSec();
 })
+
+t1 = Math.max(t0, "17:00".toSec());
 //var sy = d3.scaleLinear().domain([t0, t1]).range([50,height-50]);
 
 var sy = d3.scaleTime()
@@ -104,6 +122,12 @@ var cells = svg.selectAll('rect').data(data).enter()
 });
 
 cells.append('rect')
+.attr('class',function(d,i){
+	if (isReg(d.tag))
+		return 'isReg';
+	else
+		return 'notReg';
+})
 //.attr('x', function(d){return sx(d.day)  })
 //.attr('y', function(d){return sy(d.start.toSec()) })
 .attr('width',function(d){return sx(2)-sx(1)})
@@ -112,7 +136,12 @@ cells.append('rect')
 		-sy(d.start.toSec().toDate())
 	
 })
-.attr('fill', function(d){return d3.color(color(d.tag))});
+.attr('fill', function(d,i){
+	if (isReg(d.tag))
+		return d3.color(color(d.tag)).darker(0);
+	else
+		return d3.color(color(d.tag)).brighter(0);
+});
 
 var tags = cells.append('text')
 //.text(function(d){return d.tag})
@@ -133,12 +162,16 @@ tags.each(function(d,i){
 	.attr('x', function(){return (sx(2)-sx(1))/2  })
 	.attr('dy', function(e,i){return '1em'})
 	.attr('font-style', function(e, i){
-		if(i==1) return 'italic';
+		if(i==1 || i==3) return 'italic';
 		else return 'normal';
 	})
 	.attr('font-size', function(e, i){
-		if(i==1) return 12;
+		if(i==1 || i==3) return 12;
 		else return 15;
+	})
+	.attr('fill', function(d,i){
+		if(i==1 || i==3) return 'gray';
+		return 'black';
 	})
 
 });
