@@ -16,8 +16,18 @@ line {
 	stroke-width:3;
 }
 
-.notReg {
+@keyframes blink {
+    0% {fill-opacity: 0.8;}
+    33% {fill-opacity: 0;}
+	66% {fill-opacity: 0.8;}
+    100% {fill-opacity: 0.8;}
+}
+
+.notReg, .notReg+text{
 	fill-opacity: 0.5;
+	animation-name: blink;
+    animation-duration: 4s;
+	animation-iteration-count: infinite;
 }
 .axis path{
 	display:none;
