@@ -157,10 +157,10 @@ var data =
   {
     "start": "9:30", 
     "tag": [
-      "MATH 466", 
-      "Theory of Statistics", 
-      "Saguaro Hall 114", 
-      "Yue Niu"
+      "MATH 464", 
+      "Theory of Probability", 
+      "Engineering 308", 
+      "Douglas Pickrell"
     ], 
     "end": "10:45", 
     "day": "2"
@@ -168,10 +168,10 @@ var data =
   {
     "start": "9:30", 
     "tag": [
-      "MATH 466", 
-      "Theory of Statistics", 
-      "Saguaro Hall 114", 
-      "Yue Niu"
+      "MATH 464", 
+      "Theory of Probability", 
+      "Engineering 308", 
+      "Douglas Pickrell"
     ], 
     "end": "10:45", 
     "day": "4"
