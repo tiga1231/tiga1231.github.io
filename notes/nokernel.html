@@ -83,7 +83,7 @@ Consider a common trick that one may add a scalar 1 on each entries of a kernel 
 <p>$$X' = \lbrack x_1,\; x_2,\; x_3,\; ax_1+bx_2+cx_3 \rbrack\quad (with\; a+b+c \neq 1)$$</p>
 <p>Next, add each entry by one: </p>
 <p>$$X'' = \lbrack x_1+1,\; x_2+1,\; x_3+1,\; ax_1+bx_2+cx_3+1 \rbrack$$</p>
-<p>Now $X''$ is essatially equivalent to feature set:</p>
+<p>Now $X''$ is essentially equivalent to feature set:</p>
 <p>$$X1 = \lbrack x_1,\; x_2,\; x_3,\; 1 \rbrack$$</p>
 <h2>Conclusion</h2>
 <p>This is why vectors in kernel matrices work the same as normal feature vectors that we may not have access to. As machine learning techniques do not require the orthogonality or unit length of the basis, we only need to define a notion of dot products. And <em>more importantly</em>, we don't have to (and shouldn't) treat the kernel matrix different from data features we normally obtain, feeding them into any existing learning system (PCA, least squares) that operates on normal feature spaces just work.</p>
