@@ -20,8 +20,7 @@ var yScale = d3.scaleLinear().domain([0,height])
 .range([height,0]);
 var data = d3.range(7).map(function(d){
 	var x = 50 + Math.random() * (width-100);
-	return [x,
-			Math.random()* 50 + x *height/width];
+	return [x, height - Math.random()* 50 -x *height/width];
 })
 
 var color = d3.scaleOrdinal()
@@ -68,7 +67,7 @@ function redrawLine(b){
 		.attr('x1',0)
 		.attr('x2', width)
 		.attr('y1',b[0])
-		.attr('y2', b[1]*width);
+		.attr('y2', b[0]+b[1]*width);
 	}
 }
 function beta(data){
