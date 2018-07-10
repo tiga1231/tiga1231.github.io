@@ -1,0 +1,280 @@
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+function setMode(type){
+  if(type == 'list'){
+    d3.selectAll('article')
+    .style('height', '');
+  }else if(type == 'annotate'){
+    d3.selectAll('article')
+    .style('height', '100%');
+  }
+}
+window.onload = function(){
+  setMode('annotate');
+}
+</script>
+
+
+
+<style>
+#navbar{
+}
+.container {
+  max-width: 800px;
+}
+article{
+  padding-top: 50px;
+}
+</style>
+
+
+</head>
+<body>
+<nav id='navbar' class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" onclick="setMode('list')">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setMode('annotate')">Annotate</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+<h2>Permutations and Combinations</h2>
+<article>
+  <header>
+    <h3>Introduction</h3>
+  </header>
+  <p>In many counting problems we are interested in finding the number of ways that items can be arranged with or without certain constraints. This leads us to the study of permutations and combinations.
+  </p>
+</article>
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>In how many ways can we select 3 students from a group of 5 to stand in line for a picture? Also, in how many ways can we arrange all five 5 of the students in a line for the picture?</p>
+
+  <header>
+    <h3>Definition</h3>
+  </header>
+  <p>A permutation of a set of distinct objects is an ordered arrangement of these objects. e.g. 1,3,4,2 is a permutation of the elements in the set $\{1,2,3,4\}$.
+  </p>
+  <p>An ordered arrangement of $r$ elements of a set is called an r-permutation. By the product rule, it can be argued that the number of $r$-permutations of a set with $n$ elements, denoted $P(n,r)$, is equal to $n(n-1)(n-2)\dots(n-r+1)$ where $1\leq r \leq n$.
+  </p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Proposition</h3>
+  </header>
+  <p> If n and r are integers with $0\leq r \leq n$, 
+    then $P(n,r) = \frac{n!}{(n-r)!}$.
+  </p>
+  <p>(proof)</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Examples</h3>
+  </header>
+  <ol>
+    <li>Suppose a saleswoman is to visit 8 different cities. She must begin her trip in a specified city, but after that can visit the other cities in any order she wants. How many different trips could she take?</li>
+    <li>How many permutations of the letters A,B,C,D,E,F,G contain the string ABC? (e.g. the permutation EFGABC contains the string ABC but ADBCEFG doesn’t)</li>
+  </ol>
+</article>
+
+
+<article>
+  <header>
+    <h3>Combinations</h3>
+  </header>
+  <p>As opposed to the previous section, our focus now is on counting unordered selections of objects.
+  </p>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>How many different committees (of 3 students) can be formed from a group of 4 students?</p>
+  <p>Note that we are only interested in distinct groups of students and not the relative orderings of students within groups.</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Definition</h3>
+  </header>
+  <p>An r-combination of elements of a set is an unordered selection of r elements from the set; i.e. it’s a subset of the set with r elements. e.g. out of the set $S = \{1,2,3,4\}$, $\{1,3,4\}$ is a 3-combination. Note that $\{4,1,3\}$ is the same 3-combination as $\{1,3,4\}$.</p>
+  <p>
+    The number of r-combinations of a set with n distinct elements is denoted by $C(n,r)$, and is also denoted as $\binom{n}{r}$ and is also called a binomial coefficient (more on this in the next session). 
+  </p>
+</article>
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>$C(4,2) = 6$ since all of the $2$-combinations of $\{a,b,c,d\}$ are the six subsets $\{a,b\}$, $\{a,c\}$, $\{a,d\}$, $\{b,c\}$, $\{b,d\}$, $\{c,d\}$.
+  </p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Theorem</h3>
+  </header>
+  <p>The number of $r$-combinations of a set with $n$ elements, where $n$ is a nonnegative integer and $r$ is an integer with $0 \leq r \leq n$, equals: 
+  $$\frac{n!}{r!(n-r)!}$$
+  </p>
+
+  <header>
+    <h3>Corrolary</h3>
+  </header>
+  <p>Let n and r be nonnegative integers with $r\leq n$. Then 
+    $$C(n,r) = C(n,n-r)$$
+  </p>
+
+</article>
+
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>How many poker hands of 5 cards can be dealt from a deck of 52 cards? Also, how many ways are there to select 47 cards from a standard deck of 52 cards?
+  </p>
+  <p>How many bit strings of length $n$ contain exactly $r$ 1’s?</p>
+  <p>Suppose that there are 9 faculty members in the math department and 11 in the CS department. How many ways are there to select a committee to develop a discrete math course if the committee must consist of 3 math faculty and 4 CS faculty?</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>In Class Exercises</h3>
+  </header>
+  <ol>
+  <li>How many different permutations of {a,b,c,d,e,f,g} end with a?</li>
+  <li>A coin is flipped eight times where each flip comes up either heads or tails. How many possible outcomes...
+    <ol>
+      <li>are there in total?</li>
+      <li>contain exactly three heads?</li>
+      <li>contain at least 3 heads?</li>
+      <li>contain the same number of heads and tails?</li>
+    </ol>
+  </li>
+  </ol>
+</article>
+
+
+<article>
+  <header>
+    <h2>Binomial Coefficients and Identities</h2>
+  </header>
+  <p>
+    The number of r combinations of a set are called binomial coefficients because they occur as coefficients in the expansion of powers of binomial expressions like $(a + b)^n$. The binomial theorem will express the power of a binomial expression (i.e. an expression of the form x+y) as a sum of terms involving binomial coefficients.
+  </p>
+  <p>e.g. $(x+y)^3 = \dots$</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Examples</h3>
+  </header>
+  <p>
+    What is the expansion of $(x+y)^4$?
+  </p>
+  <p>
+    What is the coefficient of $x^{12}y^{13}$ in the expansion of $(x + y)^{25}$?
+  </p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Corollary</h3>
+  </header>
+  <ol>
+    <li> Let $n$ be a nonnegative integer. Then $$\sum_{k=0}^{n} \binom{n}{k} = 2^n$$.</li>
+    <li> Let $n$ be a nonnegative integer. Then $$\sum_{k=0}^{n} \binom{n}{k} (-1)^k = 0$$.</li>
+    <li> Let $n$ be a nonnegative integer. Then 
+    $$\sum_{k=0}^{n} s^k \binom{n}{k} = 3^n$$.</li>
+  </ol>
+</article>
+
+
+<article>
+  <header>
+    <h3>Pascal’s Identity and Triangle</h3>
+    <h4>Theorem (Pascal’s Identity)</h4>
+  </header>
+  <p>Let n and k be positive integers with $n\leq k$. Then
+  $$\binom{n+1}{k} = \binom{n}{k-1}+\binom{n}{k}$$</p>
+  <p>(proof)</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Pascal’s Triangle, relation to binomial coefficients</h3>
+  </header>
+</article>
+
+
+<article>
+  <header>
+    <h3>Vandermond’s Identity</h3>
+  </header>
+  <p>Let m,n and r be nonnegative integers with r not exceeding either m orn. Then
+  $$\binom{m+n}{r} = \sum_{k=0}{r} \binom{m}{r-k} \binom{n}{k}$$</p>
+  <p>(proof)</p>
+</article>
+
+
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>Show that if $p$ is a prime and $k$ is an integer such that $1\leq k \leq p-1$, then $p$ divides $\binom{p}{k}$</p>
+</article>
+
+<article>
+  <header>
+    <h3>In Class Exercises</h3>
+  </header>
+  <ol>
+  <li>Determine the row of Pascal’s triangle containing the binomial coefficients $\binom{9}{k}$, $0 \leq k \leq 9$</li>
+  <li>Show that if n and k are positive integers then 
+  $$\binom{n+1}{k} = (n+1) \binom{n}{k-1} / k$$</li>
+</ol>
+</article>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
+</body>
+</html>
