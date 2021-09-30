@@ -1,0 +1,1 @@
+We use total CDS_counts as a denominator for computing average of ks values, in order to avoid saying 2 species are similar given only a few very good ks match out of many mismatches.

@@ -1,0 +1,54 @@
+body{
+  /*font-family: 'IBM Plex Mono', monospace;*/
+  font-family: 'Oxygen', sans-serif;
+  margin-top: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: #333333;
+  /*font-family: Geogia;*/
+}
+
+#photo{
+  float: left;
+}
+
+#description{
+  clear: both;
+  padding-top: 20px;
+}
+
+#main{
+  overflow: auto;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#footer{
+  position: relative;
+  margin-top: -50px;
+  height: 50px;
+  clear: both;
+}
+
+
+nav{
+  float: left;
+}
+nav li{
+  font-size: 1em;
+}
+
+nav a, a:hover{
+  color: #444444;
+}
+
+a, a:hover{
+  /*color: #df9552;*/
+  color: #994a00;
+}
+
+h3{
+  padding-left: 20px;
+}

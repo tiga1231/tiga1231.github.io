@@ -1,0 +1,10 @@
+body{
+  margin: 0;
+}
+
+canvas{
+  position: fixed;
+  opacity: 40%;
+  pointer-events: none;
+  z-index: -1;
+}

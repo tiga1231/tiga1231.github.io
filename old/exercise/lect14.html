@@ -1,0 +1,322 @@
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+function setMode(type){
+  if(type == 'list'){
+    d3.selectAll('article')
+    .style('height', '');
+  }else if(type == 'annotate'){
+    d3.selectAll('article')
+    .style('height', '100%');
+  }
+}
+window.onload = function(){
+  setMode('annotate');
+}
+</script>
+
+
+
+<style>
+#navbar{
+}
+.container {
+  max-width: 800px;
+}
+article{
+  padding-top: 50px;
+}
+</style>
+
+
+</head>
+<body>
+<nav id='navbar' class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" onclick="setMode('list')">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="setMode('annotate')">Annotate</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+<h2>Intro to Combinatorics Continued</h2>
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>How many license plates can be made using either 3 digits followed by 3 uppercase English letters or three uppercase English letters followed by 3 digits?
+  </p>
+</article>
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>Each user on a computer system has a password which is 8 characters long and where each character is an uppercase letter or a digit. Each password must contain at least one digit. How many possible passwords are there?
+  </p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Subtraction Rule (Principle of inclusion-exclusion)</h3>
+  </header>
+  <p>If a task can be done in either $n_1$ ways or $n_2$ ways, then the number of ways to do the task is $n_1 + n_2$ ways <em>minus</em> the number of ways to do the task that are common to the two different ways. This rule is also known as the principle of inclusion-exclusion.</p>
+
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>What is the number of elements in $S \cup T$ ?</p>
+  <p>$S=\dots$</p>
+  <p>$T=\dots$</p>
+
+
+</article>
+
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>How many bit strings of length 8 either start with a 1 bit or end with the two bits 00?</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>How many subsets of a set with 100 elements have more than one element?</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Division Rule</h3>
+  </header>
+  <blockquote>
+    There are $n/d$ ways to do a task if it can be done using a procedure that can be carried out in $n$ ways and for every way $w$, exactly $d$ of the $n$ ways correspond to way $w$.
+  </blockquote>
+
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>How many different x-coordinates does the following grid have?</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>How many different ways are there to seat four people around a circular table where two seatings are considered the same when each person has the same left neighbor and the same right neighbor?</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Example</h3>
+  </header>
+  <p>A palindrome is a string whose reversal is identical to the string. How many bit strings of length n are palindromes?</p>
+</article>
+
+
+<article>
+  <header>
+    <h3>In Class Exercises</h3>
+  </header>
+  <ul>
+  <li>How many strings of 8 English letters are there that contain no vowels if letters can be repeated? How about if letters cannot be repeated?</li>
+  <li>How many strings of 8 English letters are there that contain exactly one vowel if letters can be repeated?</li>
+  <li>How many different functions are there from a set with 10 elements to sets with 5 elements? (Note that the functions don’t need to be one-to-one).</li>
+  <li>How many strings of four decimal digits have exactly 3 digits that are 9s?</li>
+  </ul>
+</article>
+
+
+<article>
+  <header>
+    <h2>The Pigeonhole Principle</h2>
+  </header>
+  <p>5 people went traveling. One night they only booked 4 hotel rooms.<br>
+  $\Rightarrow$ 2 people have to share a room.</p>
+
+  <p><b>The Pigeonhole Principle</b> If $k$ is a positive integer and $k+1$ or more objects are placed into $k$ boxes, then there is at least one box containing two or more of the objects.</p>
+  <p><b>(Proof by contradiction)</b></p>
+</article>
+
+
+<article>
+  <header>
+    <h3>Corollary</h3>
+  </header>
+  <p>A function f from a set with k+1 or more elements to a set with k elements is not one-to-one.</p>
+  <p><b>Proof: </b>Suppose each element $y$ in the codomain is a box...</p>
+</article>
+
+
+<article>
+  <header><h3>Examples</h3></header>
+  <p>How many people do we need in order to garantee that two of them have the same birthday?</p>
+</article>
+
+
+<article>
+  <header><h3>Examples</h3></header>
+  <ol>
+  <li>In any group of 27 English words there must be at least two that begin with the same letter since there are 26 letters in the English alphabet.</li>
+  <li>How many students must be in a class to guarantee that at least two get the same score on the final if the grade scale is from 0 to 100 (integers)?</li>
+</article>
+
+
+<article>
+  <header><h3>Example</h3></header>  
+  <p>Show that for every integer $n$ there is a multiple of $n$ that has only 0s and 1s in its decimal expansion.</p>
+  <input id='x' type='number' oninput='calc()'></input><span id='output'></span>
+  <script>
+  function calc(){
+    let l = [];
+    let n = parseInt(d3.select('#x').property('value'));
+    let sol;
+    let xs = '';
+    for (let i=1; i<=n+1; i++){
+      xs += '1';
+      let x = parseInt(xs);
+      let r = x % n;
+      console.log(x, r);
+      if(l[r] == undefined){
+        l[r] = x;
+        console.log('b');
+      }else{
+        sol = Math.abs(l[r] - x);
+        break;
+      }
+    }
+    d3.select('#output').text(' '+ sol/n + ' x ' + n + ' = ' + sol);
+  }  
+  </script>
+</article>
+
+
+<article>
+  <header><h3>Examples</h3></header>
+  <ol>
+  <li>Show that if 5 integers are selected from the first 8 positive integers, there must be a pair of these integers with a sum equal to 9.</li>
+  <li>Let $(x_i,y_i)$, $i = 1,2,3,4,5 $ be a set of 5 distinct points with integer coordinates in the xy plane. Show that the midpoint of one pair of these points has integer coordinates.
+  (hint: parity)</li>
+  </ol>
+</article>
+
+
+<article>
+  <header><h3>The Generalized Pigeonhole Principle</h3></header>
+  <p><b>The Generalized Pigeonhole Principle</b> If $N$ objects are placed into $k$ boxes, then there is at least one box containing at least$\lceil{N/k}\rceil$ objects.</p>
+  <p>Proof: (by contradiction)</p>
+</article>
+
+
+<article>
+  <header><h3>The Generalized Pigeonhole Principle</h3></header>
+  <p><b>The Generalized Pigeonhole Principle</b> If $N$ objects are placed into $k$ boxes, then there is at least one box containing at least$\lceil{N/k}\rceil$ objects.</p>
+  <p>Proof: (by contradiction)</p>
+</article>
+
+
+<article>
+  <header><h3>Examples</h3></header>
+  <ol>
+  <li>Among 100 people there are at least $\lceil{100/12}\rceil = 9$ who were born in the same month.</li>
+  <li>What is the minimum number of students required in a discrete math class to be sure that
+at least 6 will receive the same grade if the possible grades are A,B,C,D and F?</li>
+  <li>How many cards must be selected from a standard deck of 52 cards to guarantee that at least 3 of the same suit are chosen?</li>
+  </ol>
+</article>
+
+
+<article>
+  <header><h3>Elegant Applications of the Pigeonhole Principle</h3></header>
+  <p><b>Proposition</b> Any positive integer n can be written in the form $2^kq$ where $k$ is a nonnegative integer and $q$ is an odd positive integer.</p>
+  <input id='x2' type='number' oninput='calc2()'></input><span id='output2'></span>
+  <script>
+  function calc2(){
+  let n = parseInt(d3.select('#x2').property('value'));
+  let k = 0;
+  let q = n;
+  while(q%2 == 0){
+    q = q/2;
+    k += 1;
+  }
+  d3.select('#output2').text('2^'+k+' x '+q);
+}  
+</script>
+</article>
+
+
+<article>
+  <header><h3>Example</h3></header>
+  <p>Show that among any $n+1$ positive integers not exceeding $2n$ there must be an integer that divides one of the other integers.</p>
+  <p>(hint: Represent any $n+1$ positive integers in the form $2^kq$. 
+  There are only $n$ odd numbers among $1 \sim 2n$... )</p>
+</article>
+
+
+<article>
+  <header><h3>Example</h3></header>
+  <p><b>Definitions</b><br>
+  Suppose that $a_1, a_2, \dots, a_N$ is a sequence of real numbers. </p>
+  <p>
+  A <em>subsequence</em> of this sequence is a sequence of the form $a_{i_1}, a_{i_2}, \dots, a_{i_m}$ 
+  where $1 \leq i_1 < i_2 \dots < i_m \leq N$; <br>
+  i.e. it is formed by including some terms from the original sequence while maintaining their relative order. </p>
+  <p>
+  A sequence is <em>strictly increasing</em> if each term is larger than the one preceding it, while it is <em>strictly decreasing</em> if each term is smaller than the one that precedes it.</p>
+</article>
+
+<article>
+<p><b>Theorem</b> Every sequence of $n^2 + 1$ distinct real numbers contains a subsequence of length $n+1$ that is either strictly increasing or strictly decreasing.</p>
+<p><b>Example</b>
+The sequence $$8, 11, 9, 1, 4, 6, 12, 10, 5, 7$$
+has $10( = 3^2+1)$ terms.The theorem tells us there is an increasing/decresing subsequence of length $4(=3+1)$
+$$1, 4, 6, 7$$
+(proof)</p>
+</article>
+
+
+<article>
+<h3>In Class Problems</h3>
+<ol>
+  <li>Let d be a positive integer. Show that among any group of d+1 (not necessarily consecutive) integers there are two with exactly the same remainder when they are divided by d.</li>
+  <li>Suppose there are nine students in a discrete math class. Prove that the class must have at least 5 male students or at least 5 female students.</li>
+</ol>
+</article>
+
+</div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
+</body>
+</html>

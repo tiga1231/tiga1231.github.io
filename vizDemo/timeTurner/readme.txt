@@ -1,1 +1,0 @@
-"I mark the hours, every one, Nor have I yet outrun the Sun. My use and value, unto you, Are gauged by what you have to do."

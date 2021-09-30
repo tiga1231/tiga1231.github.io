@@ -1,0 +1,92 @@
+<html>
+<head>
+<style>
+table, th, td {
+   border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+}
+col{
+    width: 50px;
+}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script async src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+<body>
+<h1>There is no kernel</h1>
+<!--h2>Term description</h2>
+<p>In the context of machine learning,</p>
+<dl>
+<dt>Kernel of two vectors</dt>
+<dd>Dot product of two vectors $v_i, v_j$ in a vector space $V$ of features.</dd>
+<dt>Kernel matrix</dt>
+<dd>Given $n$ vectors $v_i \in V$, entries in the kernel matrix are dot products of each two of the vectors. i.e. kernel matrix stores the pairwise dot products.</dd>
+<dt></dt>
+<dd></dd>
+</dl-->
+
+<h2>Statement</h2>
+<p>Having an $n\times n$ kernel matrix is <em>equivalent</em> to having <em>some</em> feature space of dimension k (k $\leq$ n, is the rank of the matrix), up to change of basis. </p>
+<h2>Explanation</h2>
+<p>For concreteness, suppose we are given n vectors (n data points) in a particular vector space, say $\mathbb{R}^3$, recorded in a table. e.g</p>
+<table>
+<col><col><col><col>
+<tr><th>i</th><th>x</th><th>y</th><th>z</th></tr>
+<tr><td>1</td><td>3.4</td><td>5.3</td><td>2.1</td></tr>
+<tr><td>2</td><td>6.1</td><td>0.0</td><td>2.6</td></tr>
+<tr><td>3</td><td>0.2</td><td>1.5</td><td>0.0</td></tr>
+<tr><td>4</td><td>2.3</td><td>1.0</td><td>0.5</td></tr>
+<tr><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><tr>
+<tr><td>i</td><td>$x_i$</td><td>$y_i$</td><td>$z_i$</td></tr>
+<tr><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><tr>
+<tr><td>n</td><td>$x_n$</td><td>$y_n$</td><td>$z_n$</td></tr>
+</table>
+<p>Note that this is indeed a table of dot products between each vector $v_i$ with $u_1 = (1,0,0), u_2=(0,1,0)$, and $u_3=(0,0,1)$</p>
+<p>If we choose 3 linearly independent vectors from our dataset $\{v_1, v_2, \cdots, v_n\}$, say 
+$$u_1'= v_1 = (3.4, 5.3, 2.1) $$
+$$u_2'= v_2 = (6.1, 0.0, 2.6) $$
+$$u_3'= v_3 = (0.2, 1,5, 0.0) $$
+The 3 columns of $M^{-1} = \lbrack u_1', u_2', u_3'\rbrack^{-1}$ spans $\mathbb{R}^3$ as well as $\{(1,0,0), (0,1,0), (0,0,1)\}$ did, thus can be treated as a new basis. If we compute the dot products of all data vectors with respect to $u_1, u_2$ and $u_3$, we get a set of new coordinates of the same data with the new basis. In this case:
+</p>
+<table>
+<col><col><col><col>
+<tr><th>i</th><th>$u_1$</th><th>$u_2$</th><th>$u_3$</th></tr>
+<tr><td>1</td><td>44.06</td><td>26.2</td><td>8.63</td></tr>
+<tr><td>2</td><td>26.2</td><td>43.97</td><td>1.22</td></tr>
+<tr><td>3</td><td>8.63</td><td>1.22</td><td>2.29</td></tr>
+<tr><td>4</td><td>14.17</td><td>15.33</td><td>1.96</td></tr>
+<tr><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><tr>
+<tr><td>i</td>
+<td>$\langle x_i, u_1 \rangle$</td>
+<td>$\langle y_i, u_2 \rangle$</td>
+<td>$\langle z_i, u_3 \rangle$</td>
+</tr>
+<tr><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><tr>
+<tr><td>n</td>
+<td>$\langle x_n, u_1 \rangle$</td>
+<td>$\langle y_n, u_2 \rangle$</td>
+<td>$\langle z_n, u_3 \rangle$</td>
+</tr>
+</table>
+<p>We have a new coordiante system that behaves similar to the original one, with a difference that it is scaled, rotated and sheared.</p>
+<p>If we add more redundant information, i.e more dot products with vectors in $\{v_1, v_2, \cdots, v_n\}$, we are still in $\mathbb{R}^3$, but now embeded, as a subspace in $\mathbb{R^n}$</p>
+<h2>Futher thinking</h2>
+<p>Tricks on kernel have a direct analogy on ordinary features.
+Consider a common trick that one may add a scalar 1 on each entries of a kernel matrix. Denote the trick as $k \rightarrow k+1$. You may know that this trick is equivalent to adding a constant column on current features. But here I will do it indirectly, with 2 steps. Let $X = \lbrack x_1, x_2, x_3 \rbrack$ denote a set of features. First, produce a new column which is a linear combination of the current ones:</p>
+<p>$$X' = \lbrack x_1,\; x_2,\; x_3,\; ax_1+bx_2+cx_3 \rbrack\quad (with\; a+b+c \neq 1)$$</p>
+<p>Next, add each entry by one: </p>
+<p>$$X'' = \lbrack x_1+1,\; x_2+1,\; x_3+1,\; ax_1+bx_2+cx_3+1 \rbrack$$</p>
+<p>Now $X''$ is essentially equivalent to feature set:</p>
+<p>$$X1 = \lbrack x_1,\; x_2,\; x_3,\; 1 \rbrack$$</p>
+<h2>Conclusion</h2>
+<p>This is why vectors in kernel matrices work the same as normal feature vectors that we may not have access to. As machine learning techniques do not require the orthogonality or unit length of the basis, we only need to define a notion of dot products. And <em>more importantly</em>, we don't have to (and shouldn't) treat the kernel matrix different from data features we normally obtain, feeding them into any existing learning system (PCA, least squares) that operates on normal feature spaces just work.</p>
+<!--p>The kernel normally have less interpretability, though.</p-->
+</body>
+</html>

@@ -1,0 +1,104 @@
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<title>d3 drag demo</title>
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<h1>d3 drag demo</h1>
+<canvas width='800' height='600'></canvas>
+
+<script>
+'use strict';
+var canvas = document.querySelector('canvas'),
+	context = canvas.getContext('2d'),
+	width = canvas.width,
+	height = canvas.height,
+	radius = 20;
+
+var color = d3.scaleOrdinal()
+    .range(d3.schemeCategory20);
+
+var circles = d3.range(5).map(function(i){
+	return {index:i,
+			x: Math.random() * (width-radius*2) + radius,
+			y: Math.random() * (height-radius*2) + radius,
+			color: color(i),	
+			};
+});
+
+
+
+render();
+
+d3.select(canvas).call(
+	d3.drag()
+	.container(canvas)
+	.subject(dragsubject)
+	.on('start', dragstarted)
+	.on('drag', dragged)
+	.on('end',dragended)
+	.on('start.render drag.render end.render', render)
+);
+
+function dragsubject(){
+	var ex = d3.event.x;
+	var ey = d3.event.y;
+	
+	return circles.filter(function(d){
+		return (d.x-ex)*(d.x-ex) + (d.y-ey)*(d.y-ey) < radius * radius;
+	})[0];
+}
+
+function dragstarted() {
+  //circles.splice(circles.indexOf(d3.event.subject), 1);
+  //circles.push(d3.event.subject);
+  d3.event.subject.active = true;
+}
+
+function dragged() {
+  d3.event.subject.x = d3.event.x;
+  d3.event.subject.y = d3.event.y;
+}
+
+function dragended() {
+  d3.event.subject.active = false;
+}
+
+function render(){
+	context.save();
+	context.clearRect(0,0,width, height);
+	circles.forEach(drawLine);
+	circles.forEach(drawCircle);
+	context.restore();
+
+}
+
+function drawLine(d){
+	context.beginPath();
+	context.fillStyle = d.color;
+	circles.forEach(function(i){
+		context.moveTo(d.x, d.y);
+		context.lineTo(i.x, i.y);
+	});
+	context.stroke();
+}
+
+
+function drawCircle(d){
+	context.beginPath();
+	context.fillStyle = d.color;
+  	context.moveTo(d.x + radius, d.y);
+	context.arc(d.x, d.y, radius, 0, 2*Math.PI);
+	context.fill();
+}
+
+</script>
+
+
+</body>
+</html>
