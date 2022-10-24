@@ -24,6 +24,13 @@
 
 <canvas id='bg'></canvas>
 <link href="demo/grandflow/style.css" rel="stylesheet" type="text/css">
+<style>
+#photo {
+    height: 100%;
+    clip-path: inset(5px 0px 25px 0px round 5px);
+}
+
+</style>
 <script src='demo/grandflow/js/lib/math.js'></script>
 <script src='demo/grandflow/js/lib/numeric-1.2.6.js'></script>
 <script src='demo/grandflow/js/lib/d3.v5.min.js'></script>
@@ -34,24 +41,25 @@
 <div id='main'>
     <h1 class='row'>Mingwei Li</h1>
     <div id='head' class='row'>
-    <div id='photo' class='col-2' style='min-width: 130px;'>
-        <img style='max-width: 130px;' src='img/photo-2.jpg'>
+    <div class='col-2' style='min-width: 130px;'>
+        <img id='photo' style='max-width: 130px;' src='img/photo-2.jpg'>
     </div>
     <nav class='col-6'>
         <ul>
-            <li><a href='doc/cv.pdf'>CV</a></li>
+            <li><a href='doc/cv/cv.pdf'>CV</a></li>            
             <li><a href='' onclick='alertEmail()'>Email</a></li>
             <li><a href='https://github.com/tiga1231'>Github</a></li>
             <li><a href='https://twitter.com/mwli16'>Twitter</a></li>
+            <li><a href='https://scholar.google.com/citations?hl=en&user=CHuXIuIAAAAJ'>Google Scholar</a></li>            
         </ul>
     </nav>
     </div>
 
  <div id='description' class='row'>
     <ul>
-        <li>I got my PhD from the <a href='https://www.cs.arizona.edu/'>Department of Computer Science</a>, University of Arizona.
-        <li>During my PhD, I worked with Professor <a href='https://cscheid.net/'>Carlos Scheidegger</a> in the <a href='http://hdc.cs.arizona.edu/'>HDC Lab</a>. 
-        <li>I study <a href='https://en.wikipedia.org/wiki/Data_visualization'>Data Visualization</a>, a nice blend of computer, math and art which helps people gain insights of data.
+        <li>I am a postdoc scholar at Vanderbilt University mentored by <a href='https://matthewberger.github.io/'>Dr. Matthew Berger</a>.
+        <li>I got my PhD from the <a href='https://www.cs.arizona.edu/'>Department of Computer Science, University of Arizona</a>. During my PhD, I worked with <a href='https://cscheid.net/'>Dr. Carlos Scheidegger</a> in the <a href='http://hdc.cs.arizona.edu/'>HDC Lab</a>. 
+        <li>I study <a href='https://en.wikipedia.org/wiki/Data_visualization'>Data Visualization</a>, a blend of computer, math and art that helps people gain insights of data.
     </ul>
 </div>
 
