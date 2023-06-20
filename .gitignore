@@ -53,4 +53,5 @@ Temporary Items
 *.aux
 *.log
 *.toc
+*.out
 
