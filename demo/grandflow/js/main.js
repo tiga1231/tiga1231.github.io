@@ -103,6 +103,7 @@ function play(t){
 }
 
 window.addEventListener('resize', (e)=>{
+    console.log('resize')
   canvas
   .attr('width', window.innerWidth * window.devicePixelRatio)
   .attr('height', window.innerHeight * window.devicePixelRatio);
